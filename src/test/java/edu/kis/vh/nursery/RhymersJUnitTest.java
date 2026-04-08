@@ -7,7 +7,7 @@ public class RhymersJUnitTest {
 
 // Wszystkie testy przeszły pomyślnie,  projekt jest okej.
 
-    
+
     @Test
     public void testCountIn() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -76,6 +76,16 @@ public class RhymersJUnitTest {
         Assert.assertEquals(testValue, result);
         result = rhymer.countOut();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
+    }
+
+
+
+    @Test
+    public void testFIFORhymer() {
+        FIFORhymer rhymer = new FIFORhymer();
+        rhymer.countIn(1);
+        rhymer.countIn(2);
+        Assert.assertEquals(1, rhymer.countOut());
     }
 
 }
